@@ -1,10 +1,5 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
@@ -12,19 +7,26 @@ using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using Playground.Identity.BLL.UserManagement;
+using Playground.Identity.DAL;
 using Playground.Identity.FrontEndAPI.User.DTO;
-using static Playground.Identity.DAL.Repositories;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Playground.Identity.FrontEndAPI.User
 {
     public class UserCRUD
     {
         private readonly ILogger<UserLogin> _logger;
-        private static CosmosClient _client;
+        private readonly IUnitOfWork _uow;
+        private readonly UserManager _userManager;
 
-        public UserCRUD(ILogger<UserLogin> log, CosmosClient client)
+        public UserCRUD(ILogger<UserLogin> log, IUnitOfWork uow)
         {
-            _client ??= client;
+            _uow ??= uow;
+            _userManager ??= new UserManager(_uow);
             _logger = log;
         }
 
@@ -41,8 +43,7 @@ namespace Playground.Identity.FrontEndAPI.User
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var data = JsonConvert.DeserializeObject<DAL.Model.User>(requestBody);
 
-            var repsUser = new UserRepository(_client);
-            var result = await BLL.UserManagement.UserManager.CreateUser(repsUser, data, _logger, "UserCRUD");
+            var result = await _userManager.CreateUser(data, _logger, "UserCRUD");
 
             return new OkObjectResult(result);
         }
@@ -60,8 +61,7 @@ namespace Playground.Identity.FrontEndAPI.User
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            var repsUser = new UserRepository(_client);
-            var result = await BLL.UserManagement.UserManager.GetUserById(repsUser, userId, _logger);
+            var result = await _userManager.GetUserById(userId, _logger);
 
             return new OkObjectResult(result);
         }
@@ -78,8 +78,8 @@ namespace Playground.Identity.FrontEndAPI.User
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             string continuationToken = req.Query["CT"];
-            var repsUser = new UserRepository(_client);
-            var result = await BLL.UserManagement.UserManager.GetAllUser(repsUser, continuationToken, _logger);
+
+            var result = await _userManager.GetAllUser(continuationToken, _logger);
 
             return new OkObjectResult(result);
         }

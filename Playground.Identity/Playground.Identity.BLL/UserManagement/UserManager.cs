@@ -1,45 +1,58 @@
-﻿using Microsoft.Azure.Cosmos;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Nexus.Base.CosmosDBRepository;
 using Nexus.Base.Identity;
+using Playground.Identity.DAL;
 using System.Security.Claims;
-using static Playground.Identity.DAL.Repositories;
 
 namespace Playground.Identity.BLL.UserManagement
 {
     public class UserManager
     {
-       
-        public static async Task<DAL.Model.User> CreateUser(
-             UserRepository repsUser, DAL.Model.User user,
+        private readonly IUnitOfWork _uow;
+
+        public UserManager(IUnitOfWork uow)
+        {
+            _uow ??= uow;
+        }
+
+        public async Task<DAL.Model.User> CreateUser(DAL.Model.User user,
             ILogger log, string createdBy = null
             )
         {
-            return await repsUser.CreateAsync(user, null, createdBy, null);
+            return await _uow.UserRepository.CreateAsync(user, null, createdBy, null);
         }
 
 
-        public static async Task<DAL.Model.User> GetUserById(
-            UserRepository repsUser, string userId, ILogger log
+        public async Task<DAL.Model.User> GetUserById(
+            string userId, ILogger log
             )
         {
-            var result = (await repsUser.GetAsync(
+            var result = (await _uow.UserRepository.GetAsync(
                 predicate: p => p.Id == userId)).Items.FirstOrDefault();
 
             return result;
         }
 
-        public static async Task<PageResult<DAL.Model.User>> GetAllUser(
-           UserRepository repsUser, string continuationToken,
-           ILogger log
-           )
+        public async Task<DAL.Model.User> GetUserByEmail(
+            string userEmail, ILogger log
+            )
         {
-            var result = await repsUser.GetAsync();
+            var result = (await _uow.UserRepository.GetAsync(
+                predicate: p => p.Email == userEmail)).Items.FirstOrDefault();
 
             return result;
         }
 
-        public static string GenerateJWTToken(string userId, string userName, List<DAL.Model.Claim> claims = null)
+        public async Task<PageResult<DAL.Model.User>> GetAllUser(
+           string continuationToken, ILogger log
+           )
+        {
+            var result = await _uow.UserRepository.GetAsync();
+
+            return result;
+        }
+
+        public string GenerateJWTToken(string userId, string userName, List<DAL.Model.Claim> claims = null)
         {
             var tokenClaims = new List<Claim>()
                         {

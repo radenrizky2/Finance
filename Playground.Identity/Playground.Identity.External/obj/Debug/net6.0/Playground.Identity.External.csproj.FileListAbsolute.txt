@@ -1,0 +1,12 @@
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\bin\Debug\net6.0\Playground.Identity.External.deps.json
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\bin\Debug\net6.0\Playground.Identity.External.dll
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\bin\Debug\net6.0\Playground.Identity.External.pdb
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\Playground.Identity.External.csproj.AssemblyReference.cache
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\Playground.Identity.External.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\Playground.Identity.External.AssemblyInfoInputs.cache
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\Playground.Identity.External.AssemblyInfo.cs
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\Playground.Identity.External.csproj.CoreCompileInputs.cache
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\Playground.Identity.External.dll
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\refint\Playground.Identity.External.dll
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\Playground.Identity.External.pdb
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.External\obj\Debug\net6.0\ref\Playground.Identity.External.dll

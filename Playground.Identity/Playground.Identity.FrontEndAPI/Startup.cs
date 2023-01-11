@@ -9,6 +9,7 @@ using Microsoft.Azure.WebJobs.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nexus.Base.Identity;
+using Playground.Identity.DAL;
 using System;
 
 [assembly: WebJobsStartup(typeof(Playground.Identity.FrontEndAPI.Startup))]
@@ -44,7 +45,7 @@ namespace Playground.Identity.FrontEndAPI
 
 
             // For Unit of Work
-            //builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
 
             // For Open API 
             builder.Services.AddSingleton<Fixture>(new Fixture())
