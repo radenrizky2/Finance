@@ -1,0 +1,12 @@
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\bin\Debug\net6.0\Playground.Identity.DAL.deps.json
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\bin\Debug\net6.0\Playground.Identity.DAL.dll
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\bin\Debug\net6.0\Playground.Identity.DAL.pdb
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.csproj.AssemblyReference.cache
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.AssemblyInfoInputs.cache
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.AssemblyInfo.cs
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.dll
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\refint\Playground.Identity.DAL.dll
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.pdb
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\ref\Playground.Identity.DAL.dll

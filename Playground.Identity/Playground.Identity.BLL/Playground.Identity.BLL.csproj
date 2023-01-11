@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Nexus.Base.Identity" Version="2020.3.13.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Playground.Identity.DAL\Playground.Identity.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,13 @@
-﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+﻿using AutoFixture;
+using Microsoft.Azure.Cosmos.Fluent;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Abstractions;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Configurations;
+using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
 using Microsoft.Azure.WebJobs.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Nexus.Base.Identity;
 using System;
 
@@ -24,31 +30,33 @@ namespace Playground.Identity.FrontEndAPI
             builder.Services.AddWebJobs((configure) => { }).AddAccessTokenBinding();
 
 
-            // Singleton in getting Connection String for Cosmos DB
-            //builder.Services.AddSingleton(s =>
-            //{
-            //    var connectionString = Configuration.GetConnectionString("CosmosDB") ?? Configuration["CosmosDB"]; ;
-            //    if (string.IsNullOrEmpty(connectionString))
-            //    {
-            //        throw new InvalidOperationException(
-            //            "Please specify a valid CosmosDB connection string in the appSettings.json file or your Azure Functions Settings.");
-            //    }
-            //    return new CosmosClientBuilder(connectionString).Build();
-            //});
+            //Singleton in getting Connection String for Cosmos DB
+            builder.Services.AddSingleton(s =>
+            {
+                var connectionString = Configuration.GetConnectionString("CosmosDB") ?? Configuration["CosmosDB"]; ;
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    throw new InvalidOperationException(
+                        "Please specify a valid CosmosDB connection string in the appSettings.json file or your Azure Functions Settings.");
+                }
+                return new CosmosClientBuilder(connectionString).Build();
+            });
 
 
             // For Unit of Work
             //builder.Services.AddSingleton<IUnitOfWork, UnitOfWork>();
-            //builder.Services.AddSingleton<Fixture>(new Fixture())
-            //                .AddSingleton<IOpenApiConfigurationOptions>(_ =>
-            //                {
-            //                    var options = new OpenApiConfigurationOptions()
-            //                    {
-            //                        OpenApiVersion = OpenApiVersionType.V3
-            //                    };
 
-            //                    return options;
-            //                });
+            // For Open API 
+            builder.Services.AddSingleton<Fixture>(new Fixture())
+                            .AddSingleton<IOpenApiConfigurationOptions>(_ =>
+                            {
+                                var options = new OpenApiConfigurationOptions()
+                                {
+                                    OpenApiVersion = OpenApiVersionType.V3
+                                };
+
+                                return options;
+                            });
         }
     }
 }
