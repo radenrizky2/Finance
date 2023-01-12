@@ -22,7 +22,7 @@ namespace Playground.Identity.BLL.UserManagement
             return await _uow.UserRepository.CreateAsync(user, null, createdBy, null);
         }
 
-
+        // ToDo : UserId disini literal User.Id
         public async Task<DAL.Model.User> GetUserById(
             string userId, ILogger log
             )
