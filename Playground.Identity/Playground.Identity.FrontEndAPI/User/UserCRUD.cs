@@ -7,6 +7,7 @@ using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using Nexus.Base.Identity;
 using Playground.Identity.BLL.UserManagement;
 using Playground.Identity.DAL;
 using Playground.Identity.FrontEndAPI.User.DTO;
@@ -39,7 +40,7 @@ namespace Playground.Identity.FrontEndAPI.User
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
         public async Task<IActionResult> CreateUser(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = "User/Create")] HttpRequest req,
-            ClaimsPrincipal principal)
+            [AccessToken] ClaimsPrincipal principal)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
@@ -61,7 +62,7 @@ namespace Playground.Identity.FrontEndAPI.User
         public async Task<IActionResult> GetUserById(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "User/{userId}")] HttpRequest req,
             string userId,
-            ClaimsPrincipal principal
+            [AccessToken] ClaimsPrincipal principal
             )
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
@@ -79,7 +80,7 @@ namespace Playground.Identity.FrontEndAPI.User
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(List<UserDTO>), Description = "The OK response")]
         public async Task<IActionResult> GetUsers(
           [HttpTrigger(AuthorizationLevel.Function, "get", Route = "User")] HttpRequest req,
-          ClaimsPrincipal principal
+          [AccessToken] ClaimsPrincipal principal
           )
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");

@@ -30,7 +30,7 @@ namespace Playground.Identity.FrontEndAPI.User
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
-            ClaimsPrincipal principal)
+            [AccessToken] ClaimsPrincipal principal)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
