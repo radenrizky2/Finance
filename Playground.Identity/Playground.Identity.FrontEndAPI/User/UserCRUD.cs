@@ -13,6 +13,7 @@ using Playground.Identity.FrontEndAPI.User.DTO;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Playground.Identity.FrontEndAPI.User
@@ -34,9 +35,11 @@ namespace Playground.Identity.FrontEndAPI.User
         [OpenApiOperation(operationId: "CreateUser", tags: new[] { "User CRUD" })]
         [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
         [OpenApiRequestBody(contentType: "application/json", bodyType: typeof(UserDTO), Description = "DTO for User Login")]
+        [OpenApiSecurity("Bearer", SecuritySchemeType.Http, Name = "authorization", Scheme = OpenApiSecuritySchemeType.Bearer, In = OpenApiSecurityLocationType.Header, BearerFormat = "JWT")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
         public async Task<IActionResult> CreateUser(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "User/Create")] HttpRequest req)
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "User/Create")] HttpRequest req,
+            ClaimsPrincipal principal)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
@@ -52,11 +55,13 @@ namespace Playground.Identity.FrontEndAPI.User
         [FunctionName("GetUserById")]
         [OpenApiOperation(operationId: "CreateUser", tags: new[] { "User CRUD" })]
         [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
+        [OpenApiSecurity("Bearer", SecuritySchemeType.Http, Name = "authorization", Scheme = OpenApiSecuritySchemeType.Bearer, In = OpenApiSecurityLocationType.Header, BearerFormat = "JWT")]
         [OpenApiParameter(name: "userId", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "The UserId")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(UserDTO), Description = "The OK response")]
         public async Task<IActionResult> GetUserById(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "User/{userId}")] HttpRequest req,
-            string userId
+            string userId,
+            ClaimsPrincipal principal
             )
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
@@ -69,10 +74,12 @@ namespace Playground.Identity.FrontEndAPI.User
         [FunctionName("GetUsers")]
         [OpenApiOperation(operationId: "GetUsers", tags: new[] { "User CRUD" })]
         [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
+        [OpenApiSecurity("Bearer", SecuritySchemeType.Http, Name = "authorization", Scheme = OpenApiSecuritySchemeType.Bearer, In = OpenApiSecurityLocationType.Header, BearerFormat = "JWT")]
         [OpenApiParameter(name: "CT", In = ParameterLocation.Query, Required = false, Type = typeof(string), Description = "Continuation Token")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(List<UserDTO>), Description = "The OK response")]
         public async Task<IActionResult> GetUsers(
-          [HttpTrigger(AuthorizationLevel.Function, "get", Route = "User")] HttpRequest req
+          [HttpTrigger(AuthorizationLevel.Function, "get", Route = "User")] HttpRequest req,
+          ClaimsPrincipal principal
           )
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
