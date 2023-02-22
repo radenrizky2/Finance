@@ -354,3 +354,12 @@ healthchecksdb
 /Playground.Identity/Playground.Identity.BLL.Test/obj/Playground.Identity.BLL.Test.csproj.nuget.g.props
 /Playground.Identity/Playground.Identity.BLL.Test/obj/project.assets.json
 /Playground.Identity/Playground.Identity.BLL.Test/obj/project.nuget.cache
+/Playground.Identity/Playground.Identity.BLL/obj/Playground.Identity.BLL.csproj.nuget.dgspec.json
+/Playground.Identity/Playground.Identity.BLL/obj/project.assets.json
+/Playground.Identity/Playground.Identity.BLL/obj/project.nuget.cache
+/Playground.Identity/Playground.Identity.DAL/obj/Playground.Identity.DAL.csproj.nuget.dgspec.json
+/Playground.Identity/Playground.Identity.DAL/obj/project.nuget.cache
+/Playground.Identity/Playground.Identity.DAL/obj/project.assets.json
+/Playground.Identity/Playground.Identity.External/obj/Playground.Identity.External.csproj.nuget.dgspec.json
+/Playground.Identity/Playground.Identity.External/obj/project.assets.json
+/Playground.Identity/Playground.Identity.External/obj/project.nuget.cache
