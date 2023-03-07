@@ -57,7 +57,12 @@ namespace Playground.Identity.BLL.UserManagement
             var tokenClaims = new List<Claim>()
                         {
                             new Claim(ClaimTypes.NameIdentifier, userId),
-                            new Claim(ClaimTypes.Name, userName)
+                            new Claim(ClaimTypes.Name, userName),
+                            new Claim(ClaimTypes.Role, "BinusianId:BNXXX01"),
+                            new Claim(ClaimTypes.Email, "email1"),
+                            new Claim(ClaimTypes.Email, "email2"),
+                            new Claim(ClaimTypes.Email, "email3"),
+                            new Claim(ClaimTypes.Email, "email4")
                         };
 
             if (claims != null)
