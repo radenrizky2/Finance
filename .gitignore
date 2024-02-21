@@ -365,3 +365,8 @@ healthchecksdb
 /Playground.Identity/Playground.Identity.External/obj/project.nuget.cache
 /Playground.Identity/Playground.Identity.External/obj/Debug/net6.0/Playground.Identity.External.csproj.FileListAbsolute.txt
 /Playground.Identity/Playground.Identity.External/obj/Debug/net6.0/Playground.Identity.External.assets.cache
+/Playground.Identity/Playground.Identity.External/obj/Playground.Identity.External.csproj.nuget.g.props
+/Playground.Identity/Playground.Identity.BLL/obj/Debug/net6.0/Playground.Identity.BLL.assets.cache
+/Playground.Identity/Playground.Identity.BLL/obj/Debug/net6.0/Playground.Identity.BLL.csproj.FileListAbsolute.txt
+/Playground.Identity/Playground.Identity.BLL/obj/Playground.Identity.BLL.csproj.nuget.g.props
+/Playground.Identity/.vs/Playground.Identity/FileContentIndex/read.lock
