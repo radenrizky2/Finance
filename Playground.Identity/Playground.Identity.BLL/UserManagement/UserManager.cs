@@ -27,6 +27,8 @@ namespace Playground.Identity.BLL.UserManagement
             string userId, ILogger log
             )
         {
+            //var result2 = (await _uow.UserRepository.GetByIdAsync(userId));
+
             var result = (await _uow.UserRepository.GetAsync(
                 predicate: p => p.Id == userId)).Items.FirstOrDefault();
 

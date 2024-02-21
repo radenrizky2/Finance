@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nexus.Base.Identity" Version="2020.3.13.3" />
+    <PackageReference Include="Nexus.Base.Identity" Version="4.1.1" />
   </ItemGroup>
 
   <ItemGroup>

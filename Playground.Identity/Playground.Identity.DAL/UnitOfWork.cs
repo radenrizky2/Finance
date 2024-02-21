@@ -12,8 +12,9 @@ namespace Playground.Identity.DAL
         private readonly CosmosClient _client;
 
         private readonly Lazy<IDocumentDBRepository<Model.User>> userRepository;
+        private readonly Lazy<IDocumentDBRepository<Model.Profile>> profileRepository;
 
-       
+
         public UnitOfWork(CosmosClient client)
         {
             _client = client;
@@ -21,9 +22,13 @@ namespace Playground.Identity.DAL
             userRepository ??= new Lazy<IDocumentDBRepository<Model.User>>(new DocumentDBRepository<DAL.Model.User>
                 (_DB1, _client, eventGridEndPoint: C_EventGridEndPoint, eventGridKey: C_EventGridKey));
 
+            profileRepository ??= new Lazy<IDocumentDBRepository<Model.Profile>>(new DocumentDBRepository<DAL.Model.Profile>
+              (_DB1, _client, eventGridEndPoint: C_EventGridEndPoint, eventGridKey: C_EventGridKey));
+
         }
 
         public IDocumentDBRepository<Model.User> UserRepository => userRepository.Value;
+        public IDocumentDBRepository<Model.Profile> ProfileRepository => profileRepository.Value;
 
 
         public void Dispose()

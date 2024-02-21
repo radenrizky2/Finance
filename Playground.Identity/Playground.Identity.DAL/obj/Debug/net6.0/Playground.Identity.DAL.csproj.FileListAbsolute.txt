@@ -10,3 +10,4 @@ C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\
 C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\refint\Playground.Identity.DAL.dll
 C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.pdb
 C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\ref\Playground.Identity.DAL.dll
+C:\Users\Dwanadash\source\repos\Playground\Identity-Service\Playground.Identity\Playground.Identity.DAL\obj\Debug\net6.0\Playground.Identity.DAL.sourcelink.json

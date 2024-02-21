@@ -32,6 +32,10 @@ namespace Playground.Identity.FrontEndAPI.User
             _logger = log;
         }
 
+
+        
+
+
         [FunctionName("CreateUser")]
         [OpenApiOperation(operationId: "CreateUser", tags: new[] { "User CRUD" })]
         [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
@@ -39,8 +43,9 @@ namespace Playground.Identity.FrontEndAPI.User
         [OpenApiSecurity("Bearer", SecuritySchemeType.Http, Name = "authorization", Scheme = OpenApiSecuritySchemeType.Bearer, In = OpenApiSecurityLocationType.Header, BearerFormat = "JWT")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
         public async Task<IActionResult> CreateUser(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "User/Create")] HttpRequest req,
-            [AccessToken] ClaimsPrincipal principal)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "User/Create")] HttpRequest req
+            //[AccessToken] ClaimsPrincipal principal
+            )
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
