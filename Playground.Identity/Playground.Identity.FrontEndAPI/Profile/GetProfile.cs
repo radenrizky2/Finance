@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -12,7 +6,12 @@ using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using Nexus.Base.CosmosDBRepository;
+using Playground.Identity.BLL.ProfileManagement;
 using Playground.Identity.DAL;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Playground.Identity.FrontEndAPI.Profile
 {
@@ -42,33 +41,14 @@ namespace Playground.Identity.FrontEndAPI.Profile
                 return new BadRequestObjectResult("Data Not Exist");
             }
 
-            var resultDB = await _uow.ProfileRepository.GetAsync(
-                selector: s => new DAL.Model.Profile()
-                {
-                    FullName = s.FullName,
-                    City = s.City,
-                    Edisi= s.Edisi,
-                    Id = s.Id,
-                    ActiveFlag = s.ActiveFlag,
-                },
-                orderBy: ob => ob.OrderByDescending(o => o.Edisi),
-                predicate: p => p.FullName == requestDTO.FullName,
-                partitionKeys: new Dictionary<string, string>() { { "city", requestDTO.City } },
-                continuationToken: requestDTO.ContinuationToken,
-                //enableCrossPartition: true
-                //cachePrefix: $"Profile-{city}-{name}",
-                //cacheExpiry: new TimeSpan(00, 05, 00)
-                isDebug: true,
-                //pageNumber: 2
-                usePaging: true,
-                pageSize: 2
-                );
+            var ProfileSVC = new ProfileManager(_uow);
 
-            var continuationToken = resultDB.ContinuationToken;
-            var result = resultDB.Items.ToList();
+            PageResult<DAL.Model.Profile> resultDB = await ProfileSVC.GetProfileData(requestDTO);
 
             return new OkObjectResult(resultDB);
         }
+
+       
     }
 }
 

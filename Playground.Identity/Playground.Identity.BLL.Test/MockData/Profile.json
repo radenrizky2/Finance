@@ -1,0 +1,58 @@
+﻿[
+  {
+    "fullName": "Danny",
+    "city": "Denpasar",
+    "id": "fd75f256-c022-4c41-be09-a74a230088c6",
+    "documentType": "Profile",
+    "documentNamespace": ".Profile.",
+    "partitionKey": "Profile",
+    "createdDate": "2024-02-21T04:18:12.2762674Z",
+    "createdBy": null,
+    "lastUpdatedDate": "2024-02-21T04:18:12.2762674Z",
+    "lastUpdatedBy": null,
+    "activeFlag": "Y",
+    "_etag": "\"2a00800a-0000-1800-0000-65d579880000\"",
+    "_rid": "qetpAPVb2D0BAAAAAAAAAA==",
+    "_self": "dbs/qetpAA==/colls/qetpAPVb2D0=/docs/qetpAPVb2D0BAAAAAAAAAA==/",
+    "_attachments": "attachments/",
+    "_ts": 1708489096
+  },
+  {
+    "fullName": "Danny",
+    "city": "Denpasar",
+    "id": "10ae789d-3c54-4c36-ad91-836598b01496",
+    "documentType": "Profile",
+    "documentNamespace": ".Profile.",
+    "partitionKey": "Profile",
+    "createdDate": "2024-02-21T04:18:57.7057943Z",
+    "createdBy": null,
+    "lastUpdatedDate": "2024-02-21T04:18:57.7057943Z",
+    "lastUpdatedBy": null,
+    "activeFlag": "Y",
+    "_etag": "\"2a009f0a-0000-1800-0000-65d579b60000\"",
+    "_rid": "qetpAPVb2D0CAAAAAAAAAA==",
+    "_self": "dbs/qetpAA==/colls/qetpAPVb2D0=/docs/qetpAPVb2D0CAAAAAAAAAA==/",
+    "_attachments": "attachments/",
+    "_ts": 1708489142
+  },
+  {
+    "fullName": "Danny",
+    "edisi": "5",
+    "city": "Denpasar",
+    "id": "e5f98e1c-1941-4197-bfee-947021e09234",
+    "documentType": "Profile",
+    "documentNamespace": ".Profile.",
+    "partitionKey": "Profile",
+    "createdDate": "2024-02-21T04:35:09.5209548Z",
+    "createdBy": null,
+    "lastUpdatedDate": "2024-02-21T04:35:09.5209548Z",
+    "lastUpdatedBy": null,
+    "activeFlag": "Y",
+    "_etag": "\"2a00240d-0000-1800-0000-65d57d7b0000\"",
+    "_rid": "qetpAPVb2D0JAAAAAAAAAA==",
+    "_self": "dbs/qetpAA==/colls/qetpAPVb2D0=/docs/qetpAPVb2D0JAAAAAAAAAA==/",
+    "_attachments": "attachments/",
+    "_ts": 1708490107
+  }
+
+]

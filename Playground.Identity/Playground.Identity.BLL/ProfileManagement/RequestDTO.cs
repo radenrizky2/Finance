@@ -1,15 +1,9 @@
 ﻿using Newtonsoft.Json;
-using Nexus.Base.CosmosDBRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Playground.Identity.FrontEndAPI.Profile
+namespace Playground.Identity.BLL.ProfileManagement
 {
 
-    public class RequestDTO 
+    public class RequestDTO
     {
 
         [JsonProperty("fullName")]
