@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AplikasiKeuangan.Finance.FrontEndAPI", "AplikasiKeuangan.Finance.FrontEndAPI\AplikasiKeuangan.Finance.FrontEndAPI.csproj", "{878FDA3F-4F24-402C-9313-88C19A52B916}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AplikasiKeuangan.Finance.BackEndAPI", "AplikasiKeuangan.Finance.BackEndAPI\AplikasiKeuangan.Finance.BackEndAPI.csproj", "{59D83E62-4C9B-4231-8266-8C9E74207707}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AplikasiKeuangan.Finance.DAL", "AplikasiKeuangan.Finance.DAL\AplikasiKeuangan.Finance.DAL.csproj", "{1AF7B3D8-19DA-46E2-BBF4-7028E67F7E4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AplikasiKeuangan.Finance.BLL", "AplikasiKeuangan.Finance.BLL\AplikasiKeuangan.Finance.BLL.csproj", "{EBB5DF09-D1C0-44E3-BE49-A4C7C99375E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AplikasiKeuangan.Finance.External", "AplikasiKeuangan.Finance.External\AplikasiKeuangan.Finance.External.csproj", "{5273294B-6E25-44B0-8A09-DBD0C7C1CF1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AplikasiKeuangan.Finance.BLL.Test", "AplikasiKeuangan.Finance.BLL.Test\AplikasiKeuangan.Finance.BLL.Test.csproj", "{7DF6F60A-D49D-491A-85B6-31691D47EF06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{878FDA3F-4F24-402C-9313-88C19A52B916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878FDA3F-4F24-402C-9313-88C19A52B916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878FDA3F-4F24-402C-9313-88C19A52B916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878FDA3F-4F24-402C-9313-88C19A52B916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D83E62-4C9B-4231-8266-8C9E74207707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D83E62-4C9B-4231-8266-8C9E74207707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D83E62-4C9B-4231-8266-8C9E74207707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D83E62-4C9B-4231-8266-8C9E74207707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AF7B3D8-19DA-46E2-BBF4-7028E67F7E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AF7B3D8-19DA-46E2-BBF4-7028E67F7E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AF7B3D8-19DA-46E2-BBF4-7028E67F7E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AF7B3D8-19DA-46E2-BBF4-7028E67F7E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB5DF09-D1C0-44E3-BE49-A4C7C99375E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB5DF09-D1C0-44E3-BE49-A4C7C99375E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB5DF09-D1C0-44E3-BE49-A4C7C99375E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB5DF09-D1C0-44E3-BE49-A4C7C99375E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5273294B-6E25-44B0-8A09-DBD0C7C1CF1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5273294B-6E25-44B0-8A09-DBD0C7C1CF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5273294B-6E25-44B0-8A09-DBD0C7C1CF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5273294B-6E25-44B0-8A09-DBD0C7C1CF1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF6F60A-D49D-491A-85B6-31691D47EF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF6F60A-D49D-491A-85B6-31691D47EF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF6F60A-D49D-491A-85B6-31691D47EF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF6F60A-D49D-491A-85B6-31691D47EF06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8CFED22-7C8D-498A-A204-D7F0129DA53C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AplikasiKeuangan.Finance.FrontEndAPI": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7099",
+      "launchBrowser": false
+    }
+  }
+}
